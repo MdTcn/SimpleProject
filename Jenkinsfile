@@ -13,6 +13,6 @@ node("ci-node") {
     }
 
     stage("build docker image"){
-        sh "sudo docker build -t simpleProject ."
+        sh "sudo docker build -t simpleproject ."
     }
 }
