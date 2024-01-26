@@ -11,4 +11,8 @@ node("ci-node") {
     stage("Build") {
         sh "./mvnw -DskipTests package"
     }
+
+    stage("build docker image"){
+        sh "sudo docker build -t simpleProject ."
+    }
 }
