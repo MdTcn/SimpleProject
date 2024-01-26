@@ -1,5 +1,5 @@
 node("ci-node") {
     stage("Checkout") {
-        println "checkout code source"
+        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MdTcn/SimpleProject.git']])
     }
 }
