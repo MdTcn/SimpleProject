@@ -4,6 +4,7 @@ node("ci-node") {
     }
 
     stage("Unit Tests") {
+        sh "chmod 777 ./mvnw"
         sh "./mvnw test"
     }
 }
