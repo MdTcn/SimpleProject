@@ -22,7 +22,6 @@ node("ci-node") {
             sh "sudo docker login -u $username -p $password"
             sh "sudo docker push mdycn/simpleproject:1.0"
             sh "sudo docker rmi mdycn/simpleproject:1.0"
-            sh "sudo docker rmi simpleproject:1.0"
             stash include: 'docker-compose.yml', name: 'utils'
         }
     }
