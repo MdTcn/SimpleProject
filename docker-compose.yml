@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  simpleproject:
+    image: mdycn/simpleproject:1.0
+    container_name: simpleproject
+    ports:
+      - "8080:8080"
+
+networks:
+  default:
+    external:
+      name: simple-project
