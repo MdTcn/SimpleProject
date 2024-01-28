@@ -25,4 +25,19 @@ node("ci-node") {
             stash include: 'docker-compose.yml', name: 'utils'
         }
     }
+
+    node("deploy-node"){
+        stage("deploy"){
+            unstash 'utils'
+            try{
+                sh "sudo docker-compose down"
+                sh "sudo docker-compose pull"
+                sh "sudo docker-compose up -d"
+            } catch (Exception e) {
+                println "No Docker Containers Running"
+                sh "sudo docker-compose pull"
+                sh "sudo docker-compose up -d"
+            }
+        }
+    }
 }
