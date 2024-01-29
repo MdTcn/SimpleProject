@@ -10,6 +10,6 @@ public class InformationController {
 
     @GetMapping
     public String informationApp(){
-        return "Welcome to your Information project";
+        return "Welcome to your Information project for C/CD setup";
     }
 }
